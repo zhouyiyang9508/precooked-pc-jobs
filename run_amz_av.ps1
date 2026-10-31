@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $dir = 'D:\hermes_cache\amazon_av'
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
-$raw = 'https://raw.githubusercontent.com/zhouyiyang9508/precooked-pc-jobs/main'
+$raw = 'https://raw.githubusercontent.com/zhouyiyang9508/precooked-pc-jobs/master'
 foreach ($f in @('asins.txt', 'amz_av.mjs', 'compact.mjs')) {
   if (-not (Test-Path "$dir\$f")) {
     Invoke-WebRequest -UseBasicParsing "$raw/$f" -OutFile "$dir\$f" -UserAgent 'Mozilla/5.0' -TimeoutSec 120
